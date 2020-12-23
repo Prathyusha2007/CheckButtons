@@ -1,0 +1,31 @@
+import tkinter as tk
+from tkinter import ttk
+
+root=tk.Tk()
+root.title("CheckBoxes")
+root.geometry("500x200")
+root.config(bg="Black")
+
+title=tk.Label(root,text="Welcome to the Vehicle Selector",fg='red',bg='white')
+title.config(font=("Berlin Sans FB",22))
+
+x=tk.IntVar()
+car_check_btn=tk.Checkbutton(root,text="Car",variable=x,onvalue=0,offvalue=1,height=2,width=5)
+
+y=tk.IntVar()
+bike_check_btn=tk.Checkbutton(root,text="Bike",variable=y,onvalue=0,offvalue=1,height=2,width=5)
+
+z=tk.IntVar()
+lorry_check_btn=tk.Checkbutton(root,text="Lorry",variable=z,onvalue=0,offvalue=1,height=2,width=5)
+
+def check_vehicle():
+    print(f"Car:{x.get()} \nBike:{y.get()}\nLorry:{z.get()}")
+
+submit_btn=tk.Button(root,text="Submit",bg="lime",fg="Red",command=check_vehicle)
+
+
+title.pack()
+lorry_check_btn.pack()
+car_check_btn.pack()
+bike_check_btn.pack()
+submit_btn.pack()
